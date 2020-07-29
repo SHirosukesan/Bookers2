@@ -1,0 +1,28 @@
+<div class ="container">
+    <div class="row">
+            <div class="col-xs-3">
+              <%= render 'books/form', book: @book,user: @user %>
+            </div>
+         <div class="col-xs-9">
+              <h2>Users</h2>
+              <table class="table table-inverse">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th><b>Title</b></th>
+                    <th><b>Opinion</b></th>
+                    <th colsoan="3"></th>
+                  </tr>
+                <tbody>
+                  <tr>
+                    <% @users.each do |user| %>
+                    <td><div><%= attachment_image_tag user, :profile_image, fallback: "no-image.jpg", size:'50x50' %></div></td>
+                      <td><%= user.name %></td>
+                      <td><%=link_to "Show",user_path(user.id)%></td>
+                  </tr>
+                    <% end %>
+                </tbody>
+              </table>
+          </div>
+    </div>
+</div>
