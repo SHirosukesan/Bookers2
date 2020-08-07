@@ -38,8 +38,15 @@
                       <% end %>
                     </tr>
                   </tbody>
-                </table>
-           </div>
+                    <ul>
+                      <li>By
+                      <%= @books.user.name %>
+                      </li>
+                      <li>
+                        <%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %>
+                      </li>
+                    </ul>
+          　</div>
     </div>
  </div>
 
